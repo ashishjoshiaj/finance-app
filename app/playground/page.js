@@ -45,7 +45,6 @@ export default function Page() {
           <TransactionItem type="Investment" description="In Microsoft" amount={9000} />
         </div>
       </div>
-
       <div>
         <h2 className="mb-4 text-lg font-mono">TransactionSummaryItem + TransactionItem</h2>
         <Separator />
