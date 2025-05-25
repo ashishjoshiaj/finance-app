@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import DarkModeToggle from './dark-mode-toggle'
-import useServerDarkMode from '../hooks/use-server-dark-mode'
+import getServerDarkMode from '../hooks/use-server-dark-mode'
 import { createClient } from '../lib/supabase/server'
 import { KeyRound } from 'lucide-react'
 import { sizes, variants } from '../lib/variants'
@@ -9,7 +9,7 @@ import Avatar from './avatar'
 import ClientCookiesProvider from './client-cookies-provider'
 
 export default async function PageHeader({ className }) {
-  const theme = await useServerDarkMode()
+  const theme = await getServerDarkMode()
   const supabase = await createClient()
   const { data: { user } = {}, error } = await supabase.auth.getUser()
 

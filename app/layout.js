@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import useServerDarkMode from '../hooks/use-server-dark-mode';
+import getServerDarkMode from '../hooks/use-server-dark-mode';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +13,7 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-  const theme = await useServerDarkMode();
+  const theme = await getServerDarkMode();
   return (
     <html lang="en" className={theme}>
       <body className={`${inter.className} min-h-screen flex flex-col px-8`}>

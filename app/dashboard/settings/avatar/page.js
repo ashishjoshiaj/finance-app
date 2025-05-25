@@ -4,7 +4,7 @@ import AlertSuccess from "@/components/alert-success"
 import Input from "@/components/input"
 import SubmitButton from "@/components/submit-button"
 import { uploadAvatar } from "@/lib/actions"
-import { useFormState } from 'react-dom'
+import { useActionState } from "react"
 
 const initialState = {
   message: '',
@@ -12,7 +12,7 @@ const initialState = {
 }
 
 export default function Page() {
-  const [state, formAction] = useFormState(uploadAvatar, initialState)
+  const [state, formAction] = useActionState(uploadAvatar, initialState)
   return <>
     <h1 className="text-4xl font-semibold mb-8">
       Avatar
